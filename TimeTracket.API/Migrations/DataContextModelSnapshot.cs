@@ -34,7 +34,7 @@ namespace TimeTracket.API.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("ProjectUser");
+                    b.ToTable("ProjectUser", (string)null);
                 });
 
             modelBuilder.Entity("TimeTracker.Shared.Entities.Project", b =>
@@ -63,7 +63,7 @@ namespace TimeTracket.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("TimeTracker.Shared.Entities.ProjectDetails", b =>
@@ -91,7 +91,7 @@ namespace TimeTracket.API.Migrations
                     b.HasIndex("ProjectId")
                         .IsUnique();
 
-                    b.ToTable("ProjectDetails");
+                    b.ToTable("ProjectDetails", (string)null);
                 });
 
             modelBuilder.Entity("TimeTracker.Shared.Entities.TimeEntry", b =>
@@ -121,7 +121,7 @@ namespace TimeTracket.API.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("TimeEntries");
+                    b.ToTable("TimeEntries", (string)null);
                 });
 
             modelBuilder.Entity("TimeTracker.Shared.Entities.User", b =>
@@ -138,7 +138,7 @@ namespace TimeTracket.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("ProjectUser", b =>

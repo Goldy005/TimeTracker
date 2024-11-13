@@ -7,9 +7,8 @@ using TimeTracker.Shared.Entities.Models.Project;
 
 namespace TimeTracker.Shared.Entities.Models.TimeEntry
 {
-    public record struct TimeEntryResponse(
+    public record struct TimeEntryByProjectResponse(
             int Id,
-            ProjectResponse Project,
             DateTime Start,
             DateTime? End
         );

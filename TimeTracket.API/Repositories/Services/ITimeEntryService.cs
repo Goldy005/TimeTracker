@@ -11,5 +11,7 @@
 
         Task<List<TimeEntryResponse>?> DeleteTimeEntry(int id);
 
+        Task<List<TimeEntryByProjectResponse>> GetTimeEntriesByProject(int projectId);
+
     }
 }

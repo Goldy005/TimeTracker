@@ -14,7 +14,7 @@
             _context.TimeEntries.Add(timeEntry);
             await _context.SaveChangesAsync();
 
-            return await _context.TimeEntries.ToListAsync();
+            return await GetAllTimeEntries();
         }
 
         public async Task<List<TimeEntry>> GetAllTimeEntries()
@@ -30,7 +30,7 @@
                 throw new EntityNotFoundException($"Entity with ID {id} was not found.");
             }
 
-            dbTimeEntry.Project = timeEntry.Project;
+            dbTimeEntry.ProjectId = timeEntry.ProjectId;
             dbTimeEntry.Start = timeEntry.Start;
             dbTimeEntry.End = timeEntry.End;
             dbTimeEntry.DateUpdated = DateTime.Now;
@@ -60,5 +60,11 @@
             return timeEntry;
         }
 
+        public async Task<List<TimeEntry>> GetTimeEntriesByProject(int projectId)
+        {
+            return await _context.TimeEntries
+                .Where(te =>  te.ProjectId == projectId)
+                .ToListAsync();
+        }
     }
 }
